@@ -26,21 +26,23 @@ brew 'zsh'
 cask 'atom'
 cask 'bartender'
 cask 'caffeine'
-cask ‘datagrip’
+cask 'datagrip'
 cask 'gitter'
 cask 'google-chrome'
 cask 'hipchat'
 cask 'iterm2'
 cask 'kaleidoscope'
-cask ‘lastpass’
+cask 'lastpass'
+cask 'mysqlworkbench'
 cask 'parallels-desktop'
 cask 'postman'
-cask ‘sqlworkbenchj’
 cask 'spectacle'
 cask 'spotify'
-cask ‘slack’
-cask ‘textmate’
-cask 'vlc'
-cask ‘vscode’
+cask 'slack'
+cask 'textmate'
+cask 'visual-studio-code'
 
 mas 'microsoft-remote-desktop', id: 715768417
+
+# fonts
+cask 'caskroom/fonts/font-hack'

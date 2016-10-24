@@ -66,6 +66,18 @@ defaults, and so on. Tweak this script, and occasionally run `dot` from
 time to time to keep your environment fresh and up-to-date. You can find
 this script in `bin/`.
 
+You may find it necessary to run `dot` after running `script/bootstrap`
+
+## zsh
+
+After running `script/bootstrap`, there were a couple steps necessary to setup zsh to be the default shell.
+
+* Run `sudo /etc/shells` and make sure the zsh there matches what is returned when
+running `which zsh`
+* Then run `chsh -s $(which zsh)` to set zsh to the shell
+* Run `compaudit | xargs chmod g-w` to resolve insecure directory warnings
+* Restart iTerm and verify that the shell is now using zsh instead of bash
+
 ## vim
 
 So much vim goodness in here it hurts.
@@ -89,18 +101,7 @@ after:
 
 ## atom
 
-I tried out Atom for about 3 weeks... puked a lot.
-
-## bugs
-
-I want this to work for everyone; that means when you clone it down it should
-work for you even though you may not have `rbenv` installed, for example. That
-said, I do use this as *my* dotfiles, so there's a good chance I may break
-something if I forget to make a check for a dependency.
-
-If you're brand-new to the project and run into any blockers, please
-[open an issue](https://github.com/holman/dotfiles/issues) on this repository
-and I'd love to get it fixed for you!
+In atom, install the apm package to sync settings.
 
 ## thanks
 

@@ -10,9 +10,7 @@ brew 'coreutils'
 brew 'ctags-exuberant'
 brew 'gist'
 brew 'git'
-brew 'git-flow-avh'
 brew 'go'
-brew 'irssi'
 brew 'jq'
 brew 'macvim', args: ['HEAD', 'with-lua', 'with-luajit', 'with-override-system-vim']
 brew 'mysql'
@@ -25,23 +23,24 @@ brew 'wget'
 brew 'yarn'
 brew 'zsh'
 
-cask '1password'
 cask 'atom'
 cask 'bartender'
 cask 'caffeine'
-cask 'carbon-copy-cloner'
+cask ‘datagrip’
 cask 'gitter'
 cask 'google-chrome'
 cask 'hipchat'
 cask 'iterm2'
-cask 'jing'
 cask 'kaleidoscope'
+cask ‘lastpass’
 cask 'parallels-desktop'
 cask 'postman'
+cask ‘sqlworkbenchj’
 cask 'spectacle'
 cask 'spotify'
-cask 'steam'
-cask 'transmission'
+cask ‘slack’
+cask ‘textmate’
 cask 'vlc'
+cask ‘vscode’
 
 mas 'microsoft-remote-desktop', id: 715768417

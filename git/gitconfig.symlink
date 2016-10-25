@@ -22,7 +22,7 @@
 [mergetool]
         keepBackup = false
 [difftool]
-        prompt = false
+        prompt = true
 [help]
         autocorrect = 1
 [push]
@@ -36,4 +36,4 @@
 [jira]
 	url = https://premise.atlassian.net
 [init]
-	templateDir = /Users/rocky.assad/.git_templates
+	templateDir = /Users/nathan.lowry/.git_templates

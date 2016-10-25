@@ -1,3 +1,5 @@
+pwd # print working directory when terminal is opened
+
 # shortcut to this dotfiles path is $ZSH
 export ZSH=$HOME/.dotfiles
 

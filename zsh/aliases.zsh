@@ -7,33 +7,15 @@ alias stopdb='mysql.server stop'
 alias restartdb='mysql.server restart'
 alias importdb='echo "mysql -u <username> -p <databasename> < <filename.sql>"'
 
-# readlink OSX
-alias readlink='greadlink'
-
-# irssi
-alias irssi='screen irssi'
-
-# bitlbee
-alias configbitlbee='vim usr/local/var/bitlbee/lib/'
-alias startbitlbee='brew services start bitlbee'
-alias stopbitlbee='brew services stop bitlbee'
-alias restartbitlbee='brew services restart bitlbee'
+# Redis
+alias redis-start='redis-server --protected-mode no' #runs redis-server command with protected mode turned off so it's accessible from another machine
 
 # Code
 alias ...='cd ../..'
 alias ..='cd ..'
 alias .d='cd ~/.dotfiles'
-alias apis='cd ~/code/apis'
-alias c='cd ~/code'
-alias data='cd ~/code/data'
 alias h='history'
 alias js='node'
-alias oss='cd ~/code/oss'
-alias serv='cd ~/code/serv'
-alias src='cd ~/code'
-alias sync='cd ~/code/sync'
-alias tmp='cd ~/code/tmp'
-alias tool='cd ~/code/tools'
 alias rf='rm -rf'
 
 # MacVim
@@ -44,15 +26,27 @@ alias v='mvim -v .'
 alias psa="ps aux"
 alias psg="ps aux | grep "
 
+# Applications
+alias mate='open -a "TextMate"'
+alias bench='open -a "MySqlWorkbench"'
+alias chrome='open -a "Google Chrome"'
+alias firefox='open -a "Firefox"'
+alias grip='open -a "Datagrip"'
+alias pman='open -a "Postman"'
+alias music='open -a "Spotify"'
+alias note='open -a "OneNote"'
+
 # Moving around
 alias cdb='cd -'
 alias cls='clear;ls'
 
 # Show human friendly numbers and colors
+alias dt='date "+%F %T"'
 alias df='df -h'
 alias du='du -h -d 2'
 
-alias la='ls -a'
+function cl() { cd "$@" && la ; }
+alias la='ls -lah $LS_COLOR'
 alias ll='ls -alGh'
 alias ls='ls -Gh'
 alias lsg='ll | grep'

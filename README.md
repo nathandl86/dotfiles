@@ -9,7 +9,7 @@ up into the main areas I used (Ruby, git, system libraries, and so on), so I
 structured the project accordingly.
 
 If you're interested in the philosophy behind why projects like these are
-awesome, you might want to [read my post on the
+awesome, you might want to [read my post by holman on the
 subject](http://zachholman.com/2010/08/dotfiles-are-meant-to-be-forked/).
 
 ## topical
@@ -50,7 +50,7 @@ There's a few special files in the hierarchy.
 Run this:
 
 ```sh
-git clone https://github.com/fourq/dotfiles.git ~/.dotfiles
+git clone https://github.com/nathandl86/dotfiles.git ~/.dotfiles
 cd ~/.dotfiles
 script/bootstrap
 ```
@@ -67,6 +67,10 @@ time to time to keep your environment fresh and up-to-date. You can find
 this script in `bin/`.
 
 You may find it necessary to run `dot` after running `script/bootstrap`
+
+## submodules
+
+There are a handful of submodules in config.symlink that will need you to run `git submodule init`
 
 ## zsh
 
@@ -101,11 +105,11 @@ after:
 
 ## atom
 
-In atom, install the apm package to sync settings.
+In atom, install the apm package to sync settings. From there any extensions can be shared.
 
 ## thanks
 
-I forked [Ryan Bates](http://github.com/ryanb)' excellent
+Holman forked [Ryan Bates](http://github.com/ryanb)' excellent
 [dotfiles](http://github.com/ryanb/dotfiles) for a couple years before the
 weight of my changes and tweaks inspired me to finally roll my own. But Ryan's
 dotfiles were an easy way to get into bash customization, and then to jump ship

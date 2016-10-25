@@ -45,11 +45,11 @@ alias dt='date "+%F %T"'
 alias df='df -h'
 alias du='du -h -d 2'
 
-function cl() { cd "$@" && la ; }
 alias la='ls -lah $LS_COLOR'
 alias ll='ls -alGh'
 alias ls='ls -Gh'
 alias lsg='ll | grep'
+function cl() { cd "$@" && la ; }
 
 # editing
 alias ae='mvim -v ~/.dotfiles/zsh/aliases.zsh'

@@ -5,6 +5,7 @@ tap 'caskroom/cask'
 tap 'homebrew/bundle'
 
 brew 'ack'
+brew 'awscli'
 brew 'bitlbee'
 brew 'coreutils'
 brew 'ctags-exuberant'

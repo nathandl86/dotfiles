@@ -1,15 +1,6 @@
 # Reload it all
 alias reload!='. ~/.zshrc'
 
-# Mysql
-alias startdb='mysql.server start'
-alias stopdb='mysql.server stop'
-alias restartdb='mysql.server restart'
-alias importdb='echo "mysql -u <username> -p <databasename> < <filename.sql>"'
-
-# Redis
-alias redis-start='redis-server --protected-mode no' #runs redis-server command with protected mode turned off so it's accessible from another machine
-
 # Code
 alias ...='cd ../..'
 alias ..='cd ..'
@@ -58,6 +49,3 @@ alias ge='mvim -v ~/.dotfiles/git/aliases.zsh'
 alias pe='mvim -v ~/.dotfiles/zsh/prompt.zsh'
 alias ve='mvim -v ~/.vimrc'
 alias ze='mvim -v ~/.zshrc'
-
-# Homebrew
-alias brewu='brew update  && brew upgrade --all && brew cleanup && brew prune && brew doctor'

@@ -70,10 +70,10 @@ You may find it necessary to run `dot` after running `script/bootstrap`
 
 ## submodules
 
-There are a handful of submodules in config.symlink that should be setup by the dot command
+There are a handful of submodules in config.symlink and vim.symlink that should be setup by the dot command
 but if not, they can be initialized or updated by running `git submodule update --init --recursive`
 
-Some helpful links:
+Some helpful links about git submodules:
 * https://git-scm.com/book/en/v2/Git-Tools-Submodules
 * https://chrisjean.com/git-submodules-adding-using-removing-and-updating/
 

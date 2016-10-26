@@ -28,10 +28,10 @@ defaults write NSGlobalDomain NSTextShowsControlCharacters -bool true
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool true
 
 # Disable Mission Control Animations
-defaults write com.apple.dock expose-animation-duration -int 0.25
+defaults write com.apple.dock expose-animation-duration -int 0.5
 
 # Increase window resize speed for Cocoa applications
-defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
+defaults write NSGlobalDomain NSWindowResizeTime -float 0.25
 
 # Disable Resume system-wide
 defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
@@ -56,8 +56,11 @@ defaults write NSGlobalDomain AppleFontSmoothing -int 2
 #defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 1
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
+# defaults write NSGlobalDomain KeyRepeat -int 1
+# defaults write NSGlobalDomain InitialKeyRepeat -int 10
+defaults delete NSGlobalDomain KeyRepeat
+defaults delete NSGlobalDomain InitialKeyRepeat
+
 
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
@@ -159,7 +162,7 @@ defaults write com.apple.Dock autohide-delay -float 0
 defaults write com.apple.dock autohide-time-modifier -float 0.25
 
 # Enable the 2D Dock
-defaults write com.apple.dock no-glass -bool true
+defaults write com.apple.dock no-glass -bool false
 
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool false
@@ -236,7 +239,7 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 # hash tmutil &> /dev/null && sudo tmutil disablelocal
 
 # Disable Swipe controls for Google Chrome
-defaults write com.google.Chrome.plist AppleEnableSwipeNavigateWithScrolls -bool FALSE
+defaults write com.google.Chrome.plist AppleEnableSwipeNavigateWithScrolls -bool TRUE
 
 # # Remove Dropbox’s green checkmark icons in Finder
 # file=/Applications/Dropbox.app/Contents/Resources/check.icns

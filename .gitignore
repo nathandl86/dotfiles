@@ -11,8 +11,6 @@ atom.symlink/themes
 atom.symlink/blob-store
 atom.symlink/recovery
 
-vim.symlink/plugged/*
-
 git/gitconfig.local.symlink
 
 irssi.symlink/*.autosave

@@ -71,7 +71,7 @@ You may find it necessary to run `dot` after running `script/bootstrap`
 Run `which zsh` to find the correct path for zsh. Copy the location to
 your clipboard and run `sudo nano /etc/shells` and modify the ZSH path
 to the one copied in the step above. Then to change your default shell
-to ZSH, run `chsh -s $(which zsh)` and restart iterm.
+to ZSH, run `chsh -s $(which zsh)` and restart iTerm.
 
 ## submodules
 

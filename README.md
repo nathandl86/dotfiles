@@ -68,6 +68,11 @@ this script in `bin/`.
 
 You may find it necessary to run `dot` after running `script/bootstrap`
 
+Run `which zsh` to find the correct path for zsh. Copy the location to
+your clipboard and run `sudo nano /etc/shells` and modify the ZSH path
+to the one copied in the step above. Then to change your default shell
+to ZSH, run `chsh -s $(which zsh)` and restart iterm.
+
 ## submodules
 
 There are a handful of submodules in config.symlink and vim.symlink that should be setup by the dot command

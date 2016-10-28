@@ -36,4 +36,4 @@
 [jira]
 	url = https://premise.atlassian.net
 [init]
-	templateDir = /Users/nathan.lowry/.git_templates
+	templateDir = /Users/Nathan/.git_templates

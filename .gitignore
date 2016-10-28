@@ -13,6 +13,8 @@ atom.symlink/recovery
 
 git/gitconfig.local.symlink
 
+vim.symlink/plugged
+
 irssi.symlink/*.autosave
 irssi.symlink/config
 irssi.symlink/logs

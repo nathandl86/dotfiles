@@ -16,6 +16,3 @@
 [submodule "config.symlink/base16-textmate"]
 	path = config.symlink/base16-textmate
 	url = git://github.com/chriskempson/base16-textmate.git
-[submodule "vim.symlink/plugged/YUNOcommit.vim"]
-	path = vim.symlink/plugged/YUNOcommit.vim
-	url = https://github.com/esneider/YUNOcommit.vim.git

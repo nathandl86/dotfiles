@@ -78,6 +78,10 @@ to ZSH, run `chsh -s $(which zsh)` and restart iTerm.
 There are a handful of submodules in config.symlink and vim.symlink that should be setup by the dot command
 but if not, they can be initialized or updated by running `git submodule update --init --recursive`
 
+If you encounter issues when running `dot`, you may need to run `git rm --cached -r vim.symlink/plugged`
+to remove any staged changes for the plugins (the error i was getting resembled: "fatal:
+no submodule mapping found in .gitmodules for path 'vim.symlink/plugged/YUNOcommit.vim'").
+
 Some helpful links about git submodules:
 * https://git-scm.com/book/en/v2/Git-Tools-Submodules
 * https://chrisjean.com/git-submodules-adding-using-removing-and-updating/

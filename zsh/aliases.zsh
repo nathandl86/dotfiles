@@ -26,6 +26,7 @@ alias grip='open -a "Datagrip"'
 alias pman='open -a "Postman"'
 alias music='open -a "Spotify"'
 alias note='open -a "OneNote"'
+alias testdisk='sudo testdisk'
 
 # Moving around
 alias cdb='cd -'

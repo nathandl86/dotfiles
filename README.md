@@ -68,11 +68,6 @@ this script in `bin/`.
 
 You may find it necessary to run `dot` after running `script/bootstrap`
 
-Run `which zsh` to find the correct path for zsh. Copy the location to
-your clipboard and run `sudo nano /etc/shells` and modify the ZSH path
-to the one copied in the step above. Then to change your default shell
-to ZSH, run `chsh -s $(which zsh)` and restart iTerm.
-
 ## submodules
 
 There are a handful of submodules in config.symlink and vim.symlink that should be setup by the dot command
@@ -117,9 +112,11 @@ after:
 * open vim -> run "PlugInstall" -> quit & re-open vim
 * cd ~/.vim/plugged/tern_for_vim && npm install
 
-## atom
+## atom & VSCode
 
-In atom, install the apm package to sync settings. From there any extensions can be shared.
+In atom, install the apm package "sync-settings". From there any extensions can be shared.
+
+For vs code, install "Visual Studio Code Settings Sync" and use the command pallete to download the settings
 
 ## thanks
 

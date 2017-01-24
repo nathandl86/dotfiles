@@ -1,8 +1,23 @@
+*.log
+
+atom.symlink/.apm
 atom.symlink/.node-gyp
 atom.symlink/.storage
+atom.symlink/blob-store
 atom.symlink/compile-cache/
 atom.symlink/packages
 atom.symlink/storage
 atom.symlink/themes
+atom.symlink/blob-store
+atom.symlink/recovery
 
-git/gitconfig.symlink
+git/gitconfig.local.symlink
+
+vim.symlink/plugged
+
+irssi.symlink/*.autosave
+irssi.symlink/config
+irssi.symlink/logs
+irssi.symlink/saved_colors
+irssi.symlink/config
+irssi.symlink/sasl.auth

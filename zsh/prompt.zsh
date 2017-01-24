@@ -20,9 +20,9 @@ git_dirty() {
   else
     if [[ $($git status --porcelain) == "" ]]
     then
-      echo "on %{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}"
+      echo "%{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}"
     else
-      echo "on %{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%}"
+      echo "%{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%}"
     fi
   fi
 }
@@ -61,17 +61,35 @@ ruby_version() {
 rb_prompt() {
   if ! [[ -z "$(ruby_version)" ]]
   then
-    echo "%{$fg_bold[yellow]%}$(ruby_version)%{$reset_color%} "
+    echo "%{$fg_bold[yellow]%}$(ruby_version)%{$reset_color%}"
   else
     echo ""
   fi
 }
 
-directory_name() {
-  echo "%{$fg_bold[cyan]%}%1/%\/%{$reset_color%}"
+package_version() {
+  if [[ -f ./package.json ]]
+  then
+    echo "%{$fg_bold[yellow]%}v$(jq -r .version package.json)%{$reset_color%}"
+  else
+    echo ""
+  fi
 }
 
-export PROMPT=$'\n$(rb_prompt)in $(directory_name) $(git_dirty)$(need_push)\n› '
+node_version() {
+  if ! [[ -z $(node -v) ]]
+  then
+    echo "%{$fg_bold[blue]%}node/%{$reset_color%}%{$fg_bold[yellow]%}$(node -v)%{$reset_color%} "
+  else
+    echo "missing node"
+  fi
+}
+
+directory_name() {
+  echo "%{$fg_bold[blue]%}%1/%\/%{$reset_color%}"
+}
+
+export PROMPT=$'\n$(node_version)$(rb_prompt)$(directory_name)$(package_version) $(git_dirty)$(need_push)\n› '
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }

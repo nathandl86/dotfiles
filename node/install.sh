@@ -87,3 +87,13 @@ if test ! $(which npm-check)
 then
   npm install npm-check -g
 fi
+
+if test ! $(which protractor)
+then 
+  npm install protractor -g
+fi
+
+if test ! $(which angular-cli)
+then 
+  npm install angular-cli -g
+fi

@@ -85,11 +85,20 @@ node_version() {
   fi
 }
 
+npm_version() {
+  if ! [[ -z $(node -v) ]]
+  then
+    echo "%{$fg_bold[blue]%}npm/%{$reset_color%}%{$fg_bold[yellow]%}$(npm -v)%{$reset_color%} "
+  else
+    echo "missing node"
+  fi
+}
+
 directory_name() {
   echo "%{$fg_bold[blue]%}%1/%\/%{$reset_color%}"
 }
 
-export PROMPT=$'\n$(node_version)$(rb_prompt)$(directory_name)$(package_version) $(git_dirty)$(need_push)\n› '
+export PROMPT=$'\n$(node_version)$(npm_version)$(rb_prompt)$(directory_name)$(package_version) $(git_dirty)$(need_push)\n› '
 set_prompt () {
   export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
 }

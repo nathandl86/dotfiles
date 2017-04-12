@@ -1,8 +1,10 @@
 cask_args appdir: '/Applications'
 
+tap 'brew tap homebrew/dupes'
 tap 'homebrew/versions'
 tap 'caskroom/cask'
 tap 'homebrew/bundle'
+brew tap homebrew/homebrew-php
 
 brew 'ack'
 brew 'awscli'
@@ -17,6 +19,7 @@ brew 'macvim', args: ['HEAD', 'with-lua', 'with-luajit', 'with-override-system-v
 brew 'mysql'
 brew 'node'
 brew 'openssl'
+brew 'php70'
 brew 'rabbitmq'
 brew 'redis'
 brew 'terminal-notifier'

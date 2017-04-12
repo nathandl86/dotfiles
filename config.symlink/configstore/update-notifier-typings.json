@@ -1,4 +1,10 @@
 {
 	"optOut": false,
-	"lastUpdateCheck": 1475785338031
+	"lastUpdateCheck": 1486403909268,
+	"update": {
+		"latest": "2.1.0",
+		"current": "0.8.1",
+		"type": "major",
+		"name": "typings"
+	}
 }

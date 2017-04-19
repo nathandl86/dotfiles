@@ -5,7 +5,7 @@ pwd
 export ZSH=$HOME/.dotfiles
 
 # your project folder that we can `c [tab]` to
-export PROJECTS=~/Projects
+export PROJECTS=~/projects
 
 # Stash your environment variables in ~/.localrc. This means they'll stay out
 # of your main dotfiles repository (which may be public, like this one), but
@@ -49,11 +49,11 @@ export NVM_DIR="$HOME/.nvm"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-PATH="/Users/nathan.lowry/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/Users/nathan.lowry/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/Users/nathan.lowry/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/Users/nathan.lowry/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/Users/nathan.lowry/perl5"; export PERL_MM_OPT;
+PATH="/Users/nathan/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/Users/nathan/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/nathan/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/nathan/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/nathan/perl5"; export PERL_MM_OPT;
 
 # Base16 Shell
 #BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-default-dark.sh"
@@ -61,4 +61,4 @@ PERL_MM_OPT="INSTALL_BASE=/Users/nathan.lowry/perl5"; export PERL_MM_OPT;
 BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
 
-export PATH=$PATH:$M2_HOME/bin
+export PATH=~/bin:$PATH:$M2_HOME/bin

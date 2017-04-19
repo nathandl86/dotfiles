@@ -86,8 +86,8 @@ Some helpful links about git submodules:
 After running `script/bootstrap`, there were a couple steps necessary to setup zsh to be the default shell.
 
 * Run `sudo /etc/shells` and make sure the zsh there matches what is returned when
-running `which zsh`
-* Then run `chsh -s $(which zsh)` to set zsh to the shell
+running `which zsh`. You may need to add `/usr/local/bin/zsh` to the shells file
+* Then run `chsh -s $(which zsh)` to set zsh to the shell.
 * Run `compaudit | xargs chmod g-w` to resolve insecure directory warnings
 * Restart iTerm and verify that the shell is now using zsh instead of bash
 

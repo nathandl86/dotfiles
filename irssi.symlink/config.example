@@ -343,8 +343,8 @@ statusbar = {
 };
 settings = {
   core = {
-    real_name = "Rocky Assad";
-    user_name = "rocky";
+    real_name = "Nathan Lowry";
+    user_name = "nathan";
     nick = "yourname";
   };
   "fe-text" = { actlist_sort = "refnum"; };

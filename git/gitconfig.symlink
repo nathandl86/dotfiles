@@ -34,6 +34,6 @@
 [github]
 	user = nathandl86
 [jira]
-	url = https://premise.atlassian.net
+	url = https://getbuilt.atlassian.net
 [init]
-	templateDir = /Users/nathan.lowry/.git_templates
+	templateDir = /Users/nathan/.git_templates

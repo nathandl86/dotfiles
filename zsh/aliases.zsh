@@ -29,14 +29,6 @@ alias note='open -a "OneNote"'
 alias intj='open -b com.jetbrains.intellij'
 alias testdisk='sudo testdisk'
 
-#Built DB
-alias db-seed='built db:seed'
-alias db-regression-seed='built db:seed --regression'
-
-#Docker
-alias dockerup='built docker:up'
-alias dockerpull='built docker:pull'
-
 # Moving around
 alias cdb='cd -'
 alias cls='clear;ls'

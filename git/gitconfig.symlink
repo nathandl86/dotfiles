@@ -15,7 +15,7 @@
         branch = auto
         ui = true
 [core]
-        excludesfile = ~/.gitignore
+	excludesfile = /Users/nathan/.gitignore
         editor = vim
 [apply]
         whitespace = nowarn
@@ -37,3 +37,11 @@
 	url = https://getbuilt.atlassian.net
 [init]
 	templateDir = /Users/nathan/.git_templates
+[user]
+	email = nathan.lowry@getbuilt.com
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

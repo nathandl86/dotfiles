@@ -53,6 +53,7 @@ cask 'visual-studio-code'
 cask '1password'
 
 mas 'microsoft-remote-desktop', id: 715768417
+mas 'onedrive', id: 823766827
 
 # fonts
 cask 'caskroom/fonts/font-hack'

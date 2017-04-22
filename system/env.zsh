@@ -1,2 +1,2 @@
 #export EDITOR='mvim -v'
-export EDITOR='atom'
+export EDITOR='code'

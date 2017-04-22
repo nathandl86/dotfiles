@@ -27,6 +27,23 @@ fail () {
   exit
 }
 
+setup_config_dir () {
+  echo '[ Cloning .config dir repos ]'
+  cd $HOME/.config
+
+  git clone https://github.com/chriskempson/base16-iterm2.git
+  git clone https://github.com/chriskempson/base16-shell.git
+  git clone https://github.com/chriskempson/base16-vim.git
+  git clone https://github.com/powerline/fonts.git
+  git clone https://github.com/ronilaukkarinen/weed.git
+
+  echo '[ Installing fonts ]'
+  cd fonts
+  sh ./install.sh
+
+  echo '[ Finished installing fonts ]'
+}
+
 setup_gitconfig () {
   if ! [ -f git/gitconfig.local.symlink ]
   then
@@ -139,6 +156,7 @@ install_dotfiles () {
 
 setup_gitconfig
 install_dotfiles
+setup_config_dir
 
 # If we're on a Mac, let's install and setup homebrew.
 if [ "$(uname -s)" == "Darwin" ]

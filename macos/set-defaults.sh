@@ -5,8 +5,12 @@
 defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool true
 
 # Show remaining battery time; hide percentage
-defaults write com.apple.menuextra.battery ShowPercent -string "NO"
-defaults write com.apple.menuextra.battery ShowTime -string "YES"
+defaults write com.apple.menuextra.battery ShowPercent -string "YES"
+defaults write com.apple.menuextra.battery ShowTime -string "NO"
+
+# Set the Finder prefs for showing a few different volumes on the Desktop.
+defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
+defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
 # Always show scrollbars
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
@@ -28,23 +32,13 @@ defaults write NSGlobalDomain NSTextShowsControlCharacters -bool true
 defaults write NSGlobalDomain NSAutomaticWindowAnimationsEnabled -bool true
 
 # Disable Mission Control Animations
-defaults write com.apple.dock expose-animation-duration -int 0.5
+defaults write com.apple.dock expose-animation-duration -int 0.2
 
 # Increase window resize speed for Cocoa applications
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.25
 
 # Disable Resume system-wide
 defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
-
-# # Disable the “reopen windows when logging back in” option
-# # This works, although the checkbox will still appear to be checked,
-# # and the command needs to be entered again for every restart.
-# defaults write com.apple.loginwindow TALLogoutSavesState -bool false
-# defaults write com.apple.loginwindow LoginwindowLaunchesRelaunchApps -bool false
-
-# Fix for the ancient UTF-8 bug in QuickLook (http://mths.be/bbo)
-# Commented out, as this is known to cause problems when saving files in Adobe Illustrator CS5 :(
-# echo "0x08000100:0" > ~/.CFUserTextEncoding
 
 # Enable full keyboard access for all controls (e.g. enable Tab in modal dialogs)
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
@@ -134,11 +128,11 @@ chflags nohidden ~/Library
 
 # # Hot corners
 # # Top left screen corner → Mission Control
-# defaults write com.apple.dock wvous-tl-corner -int 2
-# defaults write com.apple.dock wvous-tl-modifier -int 0
+defaults write com.apple.dock wvous-tl-corner -int 4
+defaults write com.apple.dock wvous-tl-modifier -int 0
 # # Top right screen corner → Desktop
-# defaults write com.apple.dock wvous-tr-corner -int 4
-# defaults write com.apple.dock wvous-tr-modifier -int 0
+defaults write com.apple.dock wvous-tr-corner -int 4
+defaults write com.apple.dock wvous-tr-modifier -int 0
 # # Bottom left screen corner → Start screen saver
 # defaults write com.apple.dock wvous-bl-corner -int 5
 # defaults write com.apple.dock wvous-bl-modifier -int 0
@@ -168,7 +162,7 @@ defaults write com.apple.dock no-glass -bool false
 defaults write com.apple.dock autohide -bool false
 
 # # Make Dock icons of hidden applications translucent
-# defaults write com.apple.dock showhidden -bool true
+defaults write com.apple.dock showhidden -bool true
 
 # Enable iTunes track notifications in the Dock
 defaults write com.apple.dock itunes-notifications -bool true
@@ -220,8 +214,8 @@ defaults write com.apple.iTunes disablePing -bool true
 defaults write com.apple.iTunes NSUserKeyEquivalents -dict-add "Target Search Field" "@F"
 
 # Disable send and reply animations in Mail.app
-defaults write com.apple.Mail DisableReplyAnimations -bool true
-defaults write com.apple.Mail DisableSendAnimations -bool true
+defaults write com.apple.Mail DisableReplyAnimations -bool false
+defaults write com.apple.Mail DisableSendAnimations -bool false
 
 # Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
@@ -240,11 +234,6 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 # Disable Swipe controls for Google Chrome
 defaults write com.google.Chrome.plist AppleEnableSwipeNavigateWithScrolls -bool TRUE
-
-# # Remove Dropbox’s green checkmark icons in Finder
-# file=/Applications/Dropbox.app/Contents/Resources/check.icns
-# [ -e "$file" ] && mv -f "$file" "$file.bak"
-# unset file
 
 # Kill affected applications
 for app in Finder Dock Mail Safari iTunes iCal Address\ Book SystemUIServer; do killall "$app" > /dev/null 2>&1; done

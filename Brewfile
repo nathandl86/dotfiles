@@ -53,8 +53,14 @@ cask 'textmate'
 cask 'visual-studio-code'
 cask '1password'
 
+
+# app store
+mas 'microsoft-onenote', id: 784801555
 mas 'microsoft-remote-desktop', id: 715768417
 mas 'onedrive', id: 823766827
+# mas 'xcode', id: 497799835
+mas 'wunderlist-to-do-list-tasks', id: 410628904
+
 
 # fonts
 cask 'caskroom/fonts/font-hack'

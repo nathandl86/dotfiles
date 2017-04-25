@@ -23,3 +23,5 @@ irssi.symlink/logs
 irssi.symlink/saved_colors
 irssi.symlink/config
 irssi.symlink/sasl.auth
+
+config.symlink/configstore/update-notifier-npm.json

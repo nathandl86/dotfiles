@@ -97,3 +97,8 @@ if test ! $(which angular-cli)
 then 
   npm install angular-cli -g
 fi
+
+if test ! $(which serverless)
+then
+  npm install serverless -g
+fi

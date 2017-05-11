@@ -51,6 +51,8 @@ cask 'spectacle'
 cask 'spotify'
 cask 'slack'
 cask 'textmate'
+cask 'vagrant'
+cask 'virtualbox'
 cask 'visual-studio-code'
 cask '1password'
 

@@ -1,0 +1,4 @@
+#!/bin/sh
+#
+# Force a re-sync of the system time to apple's clock
+sudo ntpdate -u time.apple.com

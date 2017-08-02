@@ -33,12 +33,10 @@
         default = simple
 [github]
 	user = nathandl86
-[jira]
-	url = https://getbuilt.atlassian.net
 [init]
 	templateDir = /Users/nathan/.git_templates
 [user]
-	email = nathan.lowry@getbuilt.com
+	email = nathandl@gmail.com
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 

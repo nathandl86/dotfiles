@@ -50,7 +50,7 @@ defaults write NSGlobalDomain AppleFontSmoothing -int 2
 #defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Set a blazingly fast keyboard repeat rate
- defaults write NSGlobalDomain KeyRepeat -int 2
+ defaults write NSGlobalDomain KeyRepeat -int 1
  defaults write NSGlobalDomain InitialKeyRepeat -int 12
 #defaults delete NSGlobalDomain KeyRepeat
 #defaults delete NSGlobalDomain InitialKeyRepeat
@@ -147,11 +147,11 @@ defaults write com.apple.dock wvous-tr-corner -int 0
 defaults write com.apple.dock wvous-tr-modifier -int 0
 
 # Bottom left screen corner → Desktop
-defaults write com.apple.dock wvous-bl-corner -int 4
+defaults write com.apple.dock wvous-bl-corner -int 0
 defaults write com.apple.dock wvous-bl-modifier -int 0
 
 # Bottom right screen corner → Desktop
-defaults write com.apple.dock wvous-br-corner -int 4
+defaults write com.apple.dock wvous-br-corner -int 0
 defaults write com.apple.dock wvous-br-modifier -int 0
 
 # Enable highlight hover effect for the grid view of a stack (Dock)

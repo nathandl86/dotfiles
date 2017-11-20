@@ -39,9 +39,12 @@
 	templateDir = /Users/nathan/.git_templates
 [user]
 	email = nathan.lowry@getbuilt.com
+	name = Nathan Lowry
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[commit]
+	template = /Users/nathan/.stCommitMsg

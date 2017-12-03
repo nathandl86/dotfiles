@@ -47,9 +47,6 @@ unset config_files
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh"  ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
-# SENCHA
-export PATH="/Users/nathan/bin/Sencha/Cmd:$PATH";
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 PATH="/Users/nathan/perl5/bin${PATH:+:${PATH}}"; 
@@ -67,10 +64,3 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 
 export PATH=~/bin:$PATH:$M2_HOME/bin
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/nathan/.nvm/versions/node/v6.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/nathan/.nvm/versions/node/v6.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/nathan/.nvm/versions/node/v6.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/nathan/.nvm/versions/node/v6.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh

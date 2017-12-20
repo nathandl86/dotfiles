@@ -1,6 +1,8 @@
 # Local/private config goes in the include
 [include]
         path = ~/.gitconfig.local
+[includeIf "gitdir:~/Built/"]
+        path = .gitconfig-built
 [hub]
         protocol = https
 [alias]
@@ -35,14 +37,11 @@
 	user = nathandl86
 [init]
 	templateDir = /Users/nathan/.git_templates
-[user]
-	name = Nathan Lowry
-	email = nathandl@gmail.com
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [commit]
 	template = /Users/nathan/.stCommitMsg

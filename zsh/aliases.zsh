@@ -7,7 +7,7 @@ alias ..='cd ..'
 alias .d='cd ~/.dotfiles'
 alias h='history'
 alias js='node'
-alias rf='rm -rf'
+#alias rf='rm -rf'
 
 # MacVim
 alias vim='mvim -v'
@@ -51,3 +51,7 @@ alias ge='mvim -v ~/.dotfiles/git/aliases.zsh'
 alias pe='mvim -v ~/.dotfiles/zsh/prompt.zsh'
 alias ve='mvim -v ~/.vimrc'
 alias ze='mvim -v ~/.zshrc'
+
+alias envCredstash='source ~/Built/devops/env-credstash/bin/activate'
+alias kwd='key_wrap.py dev'
+alias kwp='key_wrap.py prod'

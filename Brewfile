@@ -58,7 +58,7 @@ cask 'sequel-pro'
 cask 'sourcetree'
 cask 'spectacle'
 cask 'spotify'
-cask 'slack'\
+cask 'slack'
 cask 'textmate'
 cask 'vagrant'
 cask 'virtualbox'

@@ -7,7 +7,7 @@ alias ..='cd ..'
 alias .d='cd ~/.dotfiles'
 alias h='history'
 alias js='node'
-#alias rf='rm -rf'
+alias npm-exec='PATH=$(npm bin):$PATH'
 
 # MacVim
 alias vim='mvim -v'

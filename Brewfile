@@ -23,6 +23,7 @@ brew 'macvim', args: ['HEAD', 'with-lua', 'with-luajit', 'with-override-system-v
 brew 'mysql'
 brew 'node'
 brew 'pam_yubico'
+brew 'pre-commit'
 brew 'php70-intl'
 brew 'php70-mcrypt'
 brew 'php70-opcache'
@@ -63,6 +64,7 @@ cask 'textmate'
 cask 'vagrant'
 cask 'virtualbox'
 cask 'visual-studio-code'
+cask 'visual-studio-code-insiders'
 cask '1password'
 
 

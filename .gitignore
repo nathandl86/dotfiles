@@ -11,6 +11,8 @@ atom.symlink/themes
 atom.symlink/blob-store
 atom.symlink/recovery
 
+config.symlink/configstore/
+
 .idea/*
 
 git/gitconfig.local.symlink

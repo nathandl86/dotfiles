@@ -8,6 +8,7 @@ alias .d='cd ~/.dotfiles'
 alias h='history'
 alias js='node'
 alias npm-exec='PATH=$(npm bin):$PATH'
+alias built-api-test='built db:seed --regression -n && docker exec -t built_php_1 vendor/bin/phpunit --no-coverage'
 
 # MacVim
 alias vim='mvim -v'

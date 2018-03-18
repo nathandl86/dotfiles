@@ -73,11 +73,6 @@ then
   npm install nsp -g
 fi
 
-if test ! $(which coffee-script)
-then
-  npm install coffee-script -g
-fi
-
 if test ! $(which node-inspector)
 then
   npm install node-inspector -g
@@ -89,12 +84,12 @@ then
 fi
 
 if test ! $(which protractor)
-then 
+then
   npm install protractor -g
 fi
 
 if test ! $(which angular-cli)
-then 
+then
   npm install angular-cli -g
 fi
 

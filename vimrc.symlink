@@ -278,7 +278,6 @@ call plug#end()
 " Colorscheme
 """""""""""""""""""""""""""""""""
 set background=dark
-colorscheme base16-default-dark
 let base16colorspace=256
 if filereadable(expand("~/.vimrc_background"))
   source ~/.vimrc_background

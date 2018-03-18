@@ -47,12 +47,9 @@ unset config_files
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh"  ] && . "$NVM_DIR/nvm.sh" # This loads nvm
 
-# SENCHA
-export PATH="/Users/nathan/bin/Sencha/Cmd:$PATH";
-
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-PATH="/Users/nathan/perl5/bin${PATH:+:${PATH}}"; 
+PATH="/Users/nathan/perl5/bin${PATH:+:${PATH}}";
 export PATH;
 PERL5LIB="/Users/nathan/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/Users/nathan/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;

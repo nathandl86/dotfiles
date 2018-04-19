@@ -71,3 +71,5 @@ export PATH=~/bin:$PATH:$M2_HOME/bin
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /Users/nathan/.nvm/versions/node/v6.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/nathan/.nvm/versions/node/v6.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+export PATH=/usr/local/opt/php@7.1/bin:$PATH

@@ -3,6 +3,8 @@
         path = ~/.gitconfig.local
 [includeIf "gitdir:~/Built/"]
         path = .gitconfig-built
+[includeIf "gitdir:~/repos/built/"]
+	path = .gitconfig-built
 [hub]
         protocol = https
 [alias]

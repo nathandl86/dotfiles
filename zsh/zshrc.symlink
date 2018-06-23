@@ -49,8 +49,8 @@ export NVM_DIR="$HOME/.nvm"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-PATH="/Users/nathan/perl5/bin${PATH:+:${PATH}}";
-export PATH;
+export PATH="/Users/nathan/perl5/bin${PATH:+:${PATH}}";
+
 PERL5LIB="/Users/nathan/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/Users/nathan/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/Users/nathan/perl5\""; export PERL_MB_OPT;
@@ -73,3 +73,10 @@ export PATH=~/bin:$PATH:$M2_HOME/bin
 [[ -f /Users/nathan/.nvm/versions/node/v6.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/nathan/.nvm/versions/node/v6.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 
 export PATH=/usr/local/opt/php@7.1/bin:$PATH
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+pyenv virtualenvwrapper
+

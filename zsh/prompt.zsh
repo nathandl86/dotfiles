@@ -1,7 +1,6 @@
 autoload colors && colors
 # cheers, @ehrenmurdick
 # http://github.com/ehrenmurdick/config/blob/master/zsh/prompt.zsh
-
 if (( $+commands[git] ))
 then
   git="$commands[git]"
@@ -20,16 +19,15 @@ git_dirty() {
   else
     if [[ $($git status --porcelain) == "" ]]
     then
-      echo "%{$fg_bold[green]%}$(git_prompt_info)%{$reset_color%}"
+      echo "on $fg_bold[green]$(git_prompt_info)$reset_color"
     else
-      echo "%{$fg_bold[red]%}$(git_prompt_info)%{$reset_color%}"
+      echo "on $fg_bold[red]$(git_prompt_info)$reset_color"
     fi
   fi
 }
 
 git_prompt_info () {
  ref=$($git symbolic-ref HEAD 2>/dev/null) || return
-# echo "(%{\e[0;33m%}${ref#refs/heads/}%{\e[0m%})"
  echo "${ref#refs/heads/}"
 }
 
@@ -42,65 +40,84 @@ need_push () {
   then
     echo " "
   else
-    echo " with %{$fg_bold[magenta]%}unpushed%{$reset_color%} "
+    echo " with $fg_bold[magenta]unpushed$reset_color "
   fi
 }
 
-ruby_version() {
-  if (( $+commands[rbenv] ))
+project_info() {
+  if [[ -f package.json ]]
   then
-    echo "$(rbenv version | awk '{print $1}')"
-  fi
-
-  if (( $+commands[rvm-prompt] ))
+    echo "$fg_bold[blue]/$reset_color$fg_bold[yellow]v$(jq -r .version package.json)$reset_color"
+  elif [[ $VIRTUAL_ENV != "" ]]
   then
-    echo "$(rvm-prompt | awk '{print $1}')"
-  fi
-}
-
-rb_prompt() {
-  if ! [[ -z "$(ruby_version)" ]]
-  then
-    echo "%{$fg_bold[yellow]%}$(ruby_version)%{$reset_color%}"
+    echo "$fg_bold[blue]/$reset_color$fg_bold[yellow]$(basename $VIRTUAL_ENV)$reset_color "
   else
     echo ""
   fi
 }
 
-package_version() {
-  if [[ -f ./package.json ]]
+node_nvm_versions() {
+  NODE_VER="$(node -v)"
+  if ! [[ -z $NODE_VER ]]
   then
-    echo "%{$fg_bold[yellow]%}v$(jq -r .version package.json)%{$reset_color%}"
+    echo "$fg_bold[blue]node/$reset_color$fg_bold[yellow]$NODE_VER$reset_color $fg_bold[blue]npm/$reset_color$fg_bold[yellow]$(npm -v)$reset_color "
   else
     echo ""
   fi
 }
 
-node_version() {
-  if ! [[ -z $(node -v) ]]
-  then
-    echo "%{$fg_bold[blue]%}node/%{$reset_color%}%{$fg_bold[yellow]%}$(node -v)%{$reset_color%} "
+python_version() {
+    echo "$fg_bold[blue]python/$reset_color$fg_bold[yellow]$(python -V | cut -f 2 -d' ')$reset_color "
+}
+
+user_info() {
+  if [[ "${USER}" == "root" ]] then
+    echo "$fg_bold[red]${USER}$reset_color"
   else
-    echo "missing node"
+    echo "$fg_bold[green]${USER}$reset_color"
+  fi;
+}
+
+git_info() {
+  echo "$(git_dirty)$(need_push)"
+}
+
+current_dir() {
+  echo $CURRENT_DIR_REV | cut -f1 -d'/' | rev
+}
+
+current_dir_path() {
+  echo "~" $CURRENT_DIR_REV | cut -f2- -d'/' | rev
+}
+
+directory_info() {
+  CURRENT_DIR_REV=$(pwd | rev)
+  echo "$fg_bold[blue]$(current_dir)$(project_info)$reset_color @ $fg_bold[blue]$(current_dir_path)$reset_color"
+}
+
+version_info() {
+  if [[ -f package.json ]]
+  then
+    echo "using $(node_nvm_versions)"
+  elif find . -maxdepth 2 -path '*.py' -print -quit | grep -q . ;
+  then
+    echo "using $(python_version)"
+  else
+    echo ""
   fi
 }
 
-npm_version() {
-  if ! [[ -z $(node -v) ]]
-  then
-    echo "%{$fg_bold[blue]%}npm/%{$reset_color%}%{$fg_bold[yellow]%}$(npm -v)%{$reset_color%} "
-  else
-    echo "missing node"
-  fi
+function prompt_right() {
+  echo -e ""
 }
 
-directory_name() {
-  echo "%{$fg_bold[blue]%}%1/%\/%{$reset_color%}"
+function prompt_left() {
+  echo -e "$(user_info) in $(directory_info) $(version_info)$(git_info)"
 }
 
-export PROMPT=$'\n$(node_version)$(npm_version)$(rb_prompt)$(directory_name)$(package_version) $(git_dirty)$(need_push)\n› '
 set_prompt () {
-  export RPROMPT="%{$fg_bold[cyan]%}%{$reset_color%}"
+  export PROMPT=$'\n$(prompt_left)\n›› '
+  export RPROMPT=$'$(prompt_right)'
 }
 
 precmd() {

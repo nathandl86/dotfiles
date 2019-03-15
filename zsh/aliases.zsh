@@ -9,6 +9,7 @@ alias h='history'
 alias js='node'
 alias npm-exec='PATH=$(npm bin):$PATH'
 alias built-api-test='built db:seed --regression -n && docker exec -t built_php_1 vendor/bin/phpunit --no-coverage'
+alias built-clear-logout='rm ~/.built/cache/docker/ecrLogin'
 
 # MacVim
 alias vim='mvim -v'

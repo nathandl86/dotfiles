@@ -31,6 +31,12 @@ do
   source $file
 done
 
+# setup zsh-completion
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
+fpath=($(brew --prefix)/share/zsh-completions $fpath)
+
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
 compinit
@@ -49,12 +55,12 @@ export NVM_DIR="$HOME/.nvm"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-export PATH="/Users/nathanlowry/perl5/bin${PATH:+:${PATH}}";
+export PATH="/Users/nathan.lowry/perl5/bin${PATH:+:${PATH}}";
 
-PERL5LIB="/Users/nathanlowry/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/Users/nathanlowry/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/Users/nathanlowry/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/Users/nathanlowry/perl5"; export PERL_MM_OPT;
+PERL5LIB="/Users/nathan.lowry/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/Users/nathan.lowry/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/Users/nathan.lowry/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/nathan.lowry/perl5"; export PERL_MM_OPT;
 
 # Base16 Shell
 #BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-dracula.sh"
@@ -67,10 +73,10 @@ export PATH=~/bin:$PATH:$M2_HOME/bin
 
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/nathanlowry/.nvm/versions/node/v6.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/nathanlowry/.nvm/versions/node/v6.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+[[ -f /Users/nathan.lowry/.nvm/versions/node/v6.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/nathan.lowry/.nvm/versions/node/v6.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/nathanlowry/.nvm/versions/node/v6.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/nathanlowry/.nvm/versions/node/v6.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+[[ -f /Users/nathan.lowry/.nvm/versions/node/v6.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/nathan.lowry/.nvm/versions/node/v6.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
 
 export PATH=/usr/local/opt/php@7.1/bin:$PATH
 # export CPPFLAGS=-I/usr/local/opt/openssl/include
@@ -83,5 +89,4 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 pyenv virtualenvwrapper
 
-
-
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh

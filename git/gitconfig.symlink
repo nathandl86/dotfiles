@@ -5,7 +5,7 @@
         path = .gitconfig-built
 [includeIf "gitdir:~/BuiltSource/"]
         path = .gitconfig-built
-[includeIf "gitdir:~/repos/built/"]
+[includeIf "gitdir:~/projects/built/"]
 	path = .gitconfig-built
 [hub]
         protocol = https

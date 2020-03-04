@@ -57,3 +57,5 @@ alias ze='mvim -v ~/.zshrc'
 alias envCredstash='source ~/Built/devops/env-credstash/bin/activate'
 alias kwd='key_wrap.py dev'
 alias kwp='key_wrap.py prod'
+
+alias onepassLogin="/usr/local/bin/oplogin && source /tmp/.opsession"

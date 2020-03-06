@@ -16,8 +16,7 @@ brew 'git'
 brew 'go'
 brew 'jq'
 brew 'libtool'
-# https://github.com/skwp/dotfiles/issues/817#issuecomment-496861257
-brew 'macvim', args: ['HEAD', 'with-lua', 'with-luajit', 'with-override-system-vim'] 
+brew 'macvim'
 brew 'mysql@5.7'
 brew 'node'
 brew 'pre-commit'

@@ -30,3 +30,5 @@ config.symlink/configstore/update-notifier-npm.json
 
 VagrantFile
 .vagrant/*
+
+.DS_Store

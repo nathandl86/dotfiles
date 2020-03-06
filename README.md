@@ -94,7 +94,7 @@ running `which zsh`. You may need to add `/usr/local/bin/zsh` to the shells file
 
 So much vim goodness in here it hurts.
 
-before:
+#### before:
 * [npm install instant-markdown-d](https://www.npmjs.com/package/instant-markdown-d)
 * [patched powerline-fonts](https://github.com/powerline/fonts)
 * brew install ctags-exuberant
@@ -107,15 +107,25 @@ before:
 * remove iterm2's border: Open Preferences, click the Profiles tab, select your profile, click Window and select No Title Bar from the Style dropdown menu
 * iterm `base16_default-dark`
 
-after:
+#### after:
 * open vim -> run "PlugInstall" -> quit & re-open vim
 * cd ~/.vim/plugged/tern_for_vim && npm install
 
-## atom & VSCode
-
-In atom, install the apm package "sync-settings". From there any extensions can be shared.
+## vscode
 
 For vs code, install "Visual Studio Code Settings Sync" and use the command pallete to download the settings
+
+## troubleshooting
+
+### bad mysql
+I've had it occur where the mysql install is invalid and complains with either of the following:
+  - `ERROR 2003 (HY000): Can't connect to MySQL server on '127.0.0.1' (61)`
+  - `ERROR 2002 (HY000): Can't connect to local MySQL server through socket '/tmp/mysql.sock' (2)`
+
+When this has occurred, I've been able to [clean and reinstall](https://medium.com/@at0dd/install-mysql-5-7-on-mac-os-mojave-cd07ec936034) completely to resolve
+
+### want vim with lua and other options
+Homebrew removed or has modified the way install options are supplied. I've been able to use [this](https://github.com/skwp/dotfiles/issues/817#issuecomment-496861257) to successfully install
 
 ## thanks
 

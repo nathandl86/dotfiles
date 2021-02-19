@@ -9,7 +9,8 @@ pyenv install 2.7.14
 pyenv install 3.6.4
 pyenv install 3.7.5
 pyenv install 3.8.0
-pyenv global 3.7.5
+pyenv install 3.7.5
+pyenv global 3.7.9
 
 # Install pipenv
 pip install pipenv jupyter devpi-server devpi-web

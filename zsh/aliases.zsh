@@ -8,7 +8,6 @@ alias .d='cd ~/.dotfiles'
 alias h='history'
 alias js='node'
 alias npm-exec='PATH=$(npm bin):$PATH'
-alias built-api-test='built db:seed --regression -n && docker exec -t built_php_1 vendor/bin/phpunit --no-coverage'
 alias built-clear-logout='rm ~/.built/cache/docker/ecrLogin'
 
 # MacVim
@@ -53,9 +52,5 @@ alias ge='mvim -v ~/.dotfiles/git/aliases.zsh'
 alias pe='mvim -v ~/.dotfiles/zsh/prompt.zsh'
 alias ve='mvim -v ~/.vimrc'
 alias ze='mvim -v ~/.zshrc'
-
-alias envCredstash='source ~/Built/devops/env-credstash/bin/activate'
-alias kwd='key_wrap.py dev'
-alias kwp='key_wrap.py prod'
 
 alias onepassLogin="/usr/local/bin/oplogin && source /tmp/.opsession"

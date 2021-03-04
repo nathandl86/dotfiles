@@ -8,6 +8,7 @@ fi
 
 # open the repos origin in browser
 alias openrepo="git config --get remote.origin.url | awk '{ gsub(\":\",\"/\"); print  }' | awk '{ print \"http://\"substr(\$1,5);  }' | xargs open"
+alias getrepo="git config --get remote.origin.url | awk '{ gsub(\":\",\"/\"); print  }' | awk '{ print \"http://\"substr(\$1,5);  }' | sed 's/\.git//'"
 
 # The rest of my fun git aliases
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset %an: %s - %Creset %C(yellow)%d%Creset %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --all"

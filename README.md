@@ -115,6 +115,15 @@ So much vim goodness in here it hurts.
 
 For vs code, install "Visual Studio Code Settings Sync" and use the command pallete to download the settings
 
+## devpi
+
+* ```
+  devpi-init
+  devpi-gen-config
+  ```
+* [follow the steps](https://devpi.net/docs/devpi/devpi/stable/+doc/quickstart-server.html#launchd-start-at-bootup-on-mac-os-x) for setup with `launchd` on MacOS
+* depending upon where you generated the configs, you may want to remove them when it's setup
+
 ## troubleshooting
 
 ### bad mysql

@@ -5,11 +5,11 @@ git clone https://github.com/yyuu/pyenv-virtualenvwrapper.git ~/.pyenv/plugins/p
 
 # Installing Python 2 and 3
 echo -e "\n>> Installing Python 2 and 3"
-pyenv install 3.7.6
 pyenv install 3.7.9
-pyenv install 3.8.0
+pyenv install 3.8.12
+pyenv install 3.9.7
 
-pyenv global 3.7.9
+pyenv global 3.9.7
 
 # Install pipenv
 pip install --upgrade pip

@@ -28,6 +28,7 @@ irssi.symlink/config
 irssi.symlink/sasl.auth
 
 config.symlink/configstore/update-notifier-npm.json
+config.symlink/gcloud
 
 VagrantFile
 .vagrant/*

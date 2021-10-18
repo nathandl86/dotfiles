@@ -8,7 +8,6 @@ alias .d='cd ~/.dotfiles'
 alias h='history'
 alias js='node'
 alias npm-exec='PATH=$(npm bin):$PATH'
-alias built-clear-logout='rm ~/.built/cache/docker/ecrLogin'
 
 # MacVim
 alias vim='mvim -v'

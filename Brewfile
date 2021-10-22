@@ -4,6 +4,7 @@ tap 'homebrew/cask-fonts'
 tap 'homebrew/bundle'
 
 brew 'ack'
+brew 'asdf'
 brew 'awscli'
 brew 'bash-completion'
 brew 'composer'

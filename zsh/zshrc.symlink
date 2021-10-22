@@ -94,6 +94,8 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 
+# include dev-scripts
+export PATH=~/projects/personal/dev-scripts/bin:$PATH
 
 # ReCharge
 # Vault Address

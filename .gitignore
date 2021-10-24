@@ -12,7 +12,10 @@ atom.symlink/blob-store
 atom.symlink/recovery
 
 config.symlink/configstore/
+config.symlink/configstore/update-notifier-npm.json
+config.symlink/gcloud
 config.symlink/iterm2
+config.symlink/mdless
 
 .idea/*
 
@@ -26,9 +29,6 @@ irssi.symlink/logs
 irssi.symlink/saved_colors
 irssi.symlink/config
 irssi.symlink/sasl.auth
-
-config.symlink/configstore/update-notifier-npm.json
-config.symlink/gcloud
 
 VagrantFile
 .vagrant/*

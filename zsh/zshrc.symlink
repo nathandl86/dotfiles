@@ -102,3 +102,5 @@ export PATH=~/projects/personal/dev-scripts/bin:$PATH
 export VAULT_ADDR=https://vault.rechargeapps.net:8200
 # Required in OSX High Sierra and newer
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
+export PATH="$HOME/.poetry/bin:$PATH"

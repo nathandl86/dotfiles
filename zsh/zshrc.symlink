@@ -96,10 +96,15 @@ source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 
 # include dev-scripts
 export PATH=~/projects/personal/dev-scripts/bin:$PATH
+if [ -f ~/projects/personal/dev-scripts/bin/private-aliases ]; then
+    source ~/projects/personal/dev-scripts/bin/private-aliases
+fi
 
-# ReCharge
-# Vault Address
-export VAULT_ADDR=https://vault.rechargeapps.net:8200
+if [ -f ~/projects/personal/dev-scripts/bin/private-settings ]; then
+    source ~/projects/personal/dev-scripts/bin/private-settings
+fi
+
+
 # Required in OSX High Sierra and newer
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 

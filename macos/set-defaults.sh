@@ -252,6 +252,9 @@ defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 # Disable Swipe controls for Google Chrome
 defaults write com.google.Chrome.plist AppleEnableSwipeNavigateWithScrolls -bool TRUE
 
+# Disable the bouncing affect in the dock
+defaults write com.apple.dock no-bouncing -bool TRUE
+
 # Kill affected applications
 for app in Finder Dock Mail Safari iTunes iCal Address\ Book SystemUIServer; do killall "$app" > /dev/null 2>&1; done
 echo "macOS Hacks Done. Note that some of these changes require a logout/restart to take effect."

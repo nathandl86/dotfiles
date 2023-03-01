@@ -11,9 +11,6 @@ pyenv install 3.9.7
 
 pyenv global 3.9.7
 
-echo -e '\n>> Installing Poetry'
-curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python -
-
-# Install pipenv
+echo -e '\n>> Installing pypi packages'
 pip install --upgrade pip
-pip install pipenv jupyter devpi-server devpi-web
+pip install pipenv poetry jupyter devpi-server devpi-web

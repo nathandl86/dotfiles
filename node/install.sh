@@ -1,21 +1,28 @@
-if test ! -e ~/.nvm/nvm.sh
-then
-  curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
-fi
 
-lts=v$(curl https://nodejs.org/dist/index.json | jq -r '.[] | select(.lts) | .version' | head -n 1 | tail -c +2)
+echo "\n>> Installing Node"
+
+lts=$(curl https://nodejs.org/dist/index.json | jq -r '.[] | select(.lts) | .version' | head -n 1 | tail -c +2)
 cts=$(node --version)
 
-if [[ $lts != $cts ]]
-then
-  echo "updating node LTS $cts -> $lts"
-  source ~/.nvm/nvm.sh
+global_default_version=$lts
+node_versions=(
+  latest  # latest will be current but likely not yet in LTS
+  $global_default_version
+)
 
-  nvm install $lts
-  nvm alias default $lts
-else
-  echo "node LTS is current"
-fi
+for v in "${node_versions[@]}"; do
+    if [[ -z $(rtx ls -i | grep node | grep $v) ]]; then
+        echo "Installing Node $v"
+        rtx install node@$v
+    else
+        echo "Node $v is already installed"
+    fi
+done
+
+rtx use -g node@$global_default_version
+
+# reload shell so `npm` is now available
+eval "$(rtx activate zsh)"
 
 if test $(which npm)
 then
@@ -33,67 +40,26 @@ else
   echo "npm is current"
 fi
 
-if test ! $(which bunyan)
-then
-  npm install bunyan -g
+echo '\n>> Installing node packages'
+
+global_node_packages=(
+    "nodemon"
+    "eslint"
+    "instant-markdown-d"
+)
+
+if test $(which npm); then
+    for p in "${global_node_packages[@]}"; do
+        if test ! $(which $p); then
+            echo ">> Installing $p"
+            npm install $p -g
+        else
+            echo ">> $p is already installed"
+        fi
+    done
 fi
 
-if test ! $(which nodemon)
-then
-  npm install nodemon -g
-fi
-
-if test ! $(which eslint)
-then
-  npm install eslint -g
-fi
-
-if test ! $(which lab)
-then
-  npm install lab -g
-fi
-
-if test ! $(which instant-markdown-d)
-then
-  npm install instant-markdown-d -g
-fi
-
-if test ! $(which redis-commander)
-then
-  npm install redis-commander -g
-fi
-
-if test ! $(which gulp)
-then
-  npm install gulp -g
-fi
-
-if test ! $(which nsp)
-then
-  npm install nsp -g
-fi
-
-if test ! $(which node-inspector)
-then
-  npm install node-inspector -g
-fi
-
-if test ! $(which npm-check)
-then
-  npm install npm-check -g
-fi
-
-if test ! $(which protractor)
-then
-  npm install protractor -g
-fi
-
-if test ! $(which angular-cli)
-then
-  npm install angular-cli -g
-fi
-
-if test ! $(which serverless)
-then
-  npm install serverless -g
-fi
+unset global_default_version
+unset global_node_packages
+unset lts
+unset cts

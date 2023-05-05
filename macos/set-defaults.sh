@@ -55,7 +55,6 @@ defaults write NSGlobalDomain AppleFontSmoothing -int 2
 #defaults delete NSGlobalDomain KeyRepeat
 #defaults delete NSGlobalDomain InitialKeyRepeat
 
-
 # Disable auto-correct
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 

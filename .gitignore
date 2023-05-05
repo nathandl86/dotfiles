@@ -33,4 +33,6 @@ irssi.symlink/sasl.auth
 VagrantFile
 .vagrant/*
 
+config.symlink/rtx/config.toml
+
 .DS_Store

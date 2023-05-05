@@ -1,10 +1,11 @@
 cask_args appdir: '/Applications'
 
+tap 'dapr/tap'
+tap 'derailed/k9s'
 tap 'homebrew/cask-fonts'
 tap 'homebrew/bundle'
 
 brew 'ack'
-brew 'asdf'
 brew 'awscli'
 brew 'bash-completion'
 brew 'composer'
@@ -38,35 +39,25 @@ brew 'pango'
 brew 'openssl'
 brew 'readline'
 brew 'rtx'
-# brew 'redis'
 brew 'sqlite'
-# brew 'terminal-notifier'
-# brew 'testdisk'
 brew 'terraform'
 brew 'tldr'
 brew 'tree'
 brew 'wget'
-# brew 'xz'
 brew 'zlib'
-brew 'zoom'
 brew 'zsh'
 brew 'zsh-autosuggestions'
 brew 'zsh-completions'
 
 cask '1password'
 cask 'aptakube'
-# cask 'alt-tab'
-# cask 'authy'
-# cask 'atom'
 cask 'cron'
-# cask 'cyberduck'
-cask 'docker'
+cask 'cyberduck'
 cask 'firefox'
 cask 'google-chrome'
 cask 'google-cloud-sdk'
-cask 'google-drive-file-stream'
+cask 'google-drive'
 cask 'iterm2'
-# cask 'jetbrains-toolbox'
 cask 'kaleidoscope'
 cask 'lastpass'
 cask 'mysqlworkbench'
@@ -78,16 +69,14 @@ cask 'spotify'
 cask 'slack'
 cask 'textmate'
 cask 'tunnelblick'
-# cask 'vagrant'
+cask 'vagrant'
 cask 'visual-studio-code'
+cask 'zoom'
 
 
 # app store
 mas 'amphetamine', id: 937984704
-# mas 'microsoft-onenote', id: 784801555
-# mas 'microsoft-remote-desktop', id: 715768417
 mas 'onedrive', id: 823766827
-# mas 'xcode', id: 497799835
 
 # fonts
 cask 'font-hack'

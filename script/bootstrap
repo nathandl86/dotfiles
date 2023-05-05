@@ -35,7 +35,6 @@ setup_config_dir () {
   git clone https://github.com/chriskempson/base16-shell.git
   git clone https://github.com/chriskempson/base16-vim.git
   git clone https://github.com/powerline/fonts.git
-  git clone https://github.com/ronilaukkarinen/weed.git
 
   echo '[ Installing fonts ]'
   cd fonts

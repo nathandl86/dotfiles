@@ -45,12 +45,12 @@ alias lsg='ll | grep'
 function cl() { cd "$@" && la ; }
 
 # editing
-alias ae='mvim -v ~/.dotfiles/zsh/aliases.zsh'
-alias de='mvim -v ~/.dotfiles'
-alias ge='mvim -v ~/.dotfiles/git/aliases.zsh'
-alias pe='mvim -v ~/.dotfiles/zsh/prompt.zsh'
-alias ve='mvim -v ~/.vimrc'
-alias ze='mvim -v ~/.zshrc'
+# alias ae='mvim -v ~/.dotfiles/zsh/aliases.zsh'
+# alias de='mvim -v ~/.dotfiles'
+# alias ge='mvim -v ~/.dotfiles/git/aliases.zsh'
+# alias pe='mvim -v ~/.dotfiles/zsh/prompt.zsh'
+# alias ve='mvim -v ~/.vimrc'
+# alias ze='mvim -v ~/.zshrc'
 
 alias onepassLogin="/usr/local/bin/oplogin && source /tmp/.opsession"
 

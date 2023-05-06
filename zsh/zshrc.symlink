@@ -5,19 +5,23 @@ pwd
 export ZSH=$HOME/.dotfiles
 
 # your project folder that we can `c [tab]` to
-export PROJECTS=~/projects
+export PROJECTS=$HOME/projects
 
-# Stash your environment variables in ~/.localrc. This means they'll stay out
+# Stash your environment variables in /.localrc. This means they'll stay out
 # of your main dotfiles repository (which may be public, like this one), but
 # you'll have access to them in your scripts.
-if [[ -a ~/.localrc ]]
+if [[ -a $HOME/.localrc ]]
 then
-  source ~/.localrc
+  source $HOME/.localrc
 fi
 
 # all of our zsh files
 typeset -U config_files
 config_files=($ZSH/**/*.zsh)
+
+# Homebrew - setup PATH
+export PATH=/opt/homebrew/bin:$PATH
+export PATH=/opt/homebrew/sbin:$PATH
 
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}
@@ -31,15 +35,12 @@ do
   source $file
 done
 
-# Homebrew - setup PATH
-export PATH=/opt/homebrew/bin:$PATH
-export PATH=/opt/homebrew/sbin:$PATH
 
 # setup zsh-completion
 if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+  FPATH=/opt/homebrew/share/zsh/site-functions:$FPATH
 fi
-fpath=($(brew --prefix)/share/zsh-completions $fpath)
+fpath=(/opt/homebrew/share/zsh-completions $fpath)
 
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit
@@ -53,65 +54,29 @@ done
 
 unset config_files
 
-# NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh"  ] && . "$NVM_DIR/nvm.sh" # This loads nvm
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
 export PATH="/Users/nathanlowry/perl5/bin${PATH:+:${PATH}}";
-
 PERL5LIB="/Users/nathanlowry/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
 PERL_LOCAL_LIB_ROOT="/Users/nathanlowry/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/Users/nathanlowry/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/Users/nathanlowry/perl5"; export PERL_MM_OPT;
 
 # Base16 Shell
-#BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-dracula.sh"
-#[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"
-
-export PATH=~/bin:$PATH:$M2_HOME/bin
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/nathanlowry/.nvm/versions/node/v6.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/nathanlowry/.nvm/versions/node/v6.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/nathanlowry/.nvm/versions/node/v6.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/nathanlowry/.nvm/versions/node/v6.11.1/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
-
-# export PATH=/usr/local/opt/php@7.1/bin:$PATH
-# export CPPFLAGS=-I/usr/local/opt/openssl/include
-# export LDFLAGS=-L/usr/local/opt/openssl/lib
-
-export VIRTUALENVWRAPPER_PYTHON=$(which python)
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-PATH="$PYENV_ROOT/shims:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-pyenv virtualenvwrapper
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
-source $(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 
 # include dev-scripts
-export PATH=~/projects/personal/dev-scripts/bin:$PATH
-if [ -f ~/projects/personal/dev-scripts/bin/private-aliases ]; then
-    source ~/projects/personal/dev-scripts/bin/private-aliases
+export PATH=$HOME/projects/personal/dev-scripts/bin:$PATH
+if [ -f $HOME/projects/personal/dev-scripts/bin/private-aliases ]; then
+    source $HOME/projects/personal/dev-scripts/bin/private-aliases
 fi
 
-if [ -f ~/projects/personal/dev-scripts/bin/private-settings ]; then
-    source ~/projects/personal/dev-scripts/bin/private-settings
+if [ -f $HOME/projects/personal/dev-scripts/bin/private-settings ]; then
+    source $HOME/projects/personal/dev-scripts/bin/private-settings
 fi
-
 
 # Required in OSX High Sierra and newer
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
-export PATH="$HOME/.poetry/bin:$PATH"
-
-. /usr/local/opt/asdf/libexec/asdf.sh
+export PATH=$HOME/bin:$PATH:$M2_HOME/bin

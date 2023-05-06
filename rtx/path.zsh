@@ -1,0 +1,2 @@
+
+eval "$(rtx activate zsh)"

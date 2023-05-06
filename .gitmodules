@@ -10,9 +10,3 @@
 [submodule "config.symlink/fonts"]
 	path = config.symlink/fonts
 	url = https://github.com/powerline/fonts.git
-[submodule "config.symlink/weed-master"]
-	path = config.symlink/weed-master
-	url = https://github.com/ronilaukkarinen/weed.git
-[submodule "config.symlink/base16-textmate"]
-	path = config.symlink/base16-textmate
-	url = git://github.com/chriskempson/base16-textmate.git

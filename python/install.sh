@@ -1,15 +1,52 @@
 
-echo -e "\n>> Installing pyenv"
-curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer | bash
-git clone https://github.com/yyuu/pyenv-virtualenvwrapper.git ~/.pyenv/plugins/pyenv-virtualenvwrapper
+echo "\n>> Installing Python"
 
-echo -e "\n>> Installing Python"
-pyenv install 3.7.13
-pyenv install 3.9.7
-pyenv isntall 3.11.3
+global_default_version="3.11.3"
+python_versions=(
+    "3.7.13"
+    "3.9.7"
+    $global_default_version
+)
 
-pyenv global 3.11.3
+for v in "${python_versions[@]}"; do
+    if [[ -z $(rtx ls -i | grep python | grep $v) ]]; then
+        echo "Installing Python $v"
+        rtx install python@$v
+    else
+        echo "Python $v is already installed"
+    fi
+done
 
-echo -e '\n>> Installing pypi packages'
-pip install --upgrade pip
-pip install pipenv poetry jupyter devpi-server devpi-web
+echo "Setting global default Python version to $global_default_version"
+rtx use -g python@$global_default_version
+
+# reload shell so `pip` is now available
+eval "$(rtx activate zsh)"
+
+echo '\n>> Installing pypi packages'
+
+global_python_packages=(
+    "pipenv"
+    "poetry"
+    "jupyter"
+    "ipython"
+    # "devpi-server"
+    # "devpi-web"
+)
+
+if test $(which pip); then
+    pip install --upgrade pip
+
+    for p in "${global_python_packages[@]}"; do
+        if test ! $(which $p); then
+            echo ">> Installing $p"
+            pip install $p
+        else
+            echo ">> $p is already installed"
+        fi
+    done
+fi
+
+unset python_versions
+unset global_default_version
+unset global_python_packages

@@ -19,9 +19,38 @@ fi
 typeset -U config_files
 config_files=($ZSH/**/*.zsh)
 
-# Homebrew - setup PATH
-export PATH=/opt/homebrew/bin:$PATH
-export PATH=/opt/homebrew/sbin:$PATH
+# Setup for newer Apple silicon macs and back support for x86 intel macs
+if [ "$(sysctl -n sysctl.proc_translated)" = "1" ]; then
+    # X86
+    echo "X86_64 (Rosetta) Terminal"
+    export BREW_PATH="/usr/local/homebrew"
+
+    # x86 Brew
+    export LDFLAGS="-L/usr/local/homebrew/opt/openssl@1.1/lib -L/usr/local/homebrew/opt/libffi/lib -L/usr/local/homebrew/opt/zlib/lib -L/usr/local/homebrew/opt/mysql-client/lib -L/usr/local/homebrew/opt/bzip2/lib -L/usr/local/homebrew/opt/readline/lib"
+    export CFLAGS="-I/usr/local/homebrew/opt/openssl@1.1/include -I/usr/local/homebrew/opt/libffi/include -I/usr/local/homebrew/opt/zlib/include -I/usr/local/homebrew/opt/mysql-client/include -I/usr/local/homebrew/opt/bzip2/include -I/usr/local/homebrew/opt/readline/include"
+    export CPPFLAGS="-I/usr/local/homebrew/opt/openssl@1.1/include -I/usr/local/homebrew/opt/libffi/include -I/usr/local/homebrew/opt/zlib/include -I/usr/local/homebrew/opt/mysql-client/include -I/usr/local/homebrew/opt/bzip2/include -I/usr/local/homebrew/opt/readline/include"
+    export PKG_CONFIG_PATH="/usr/local/homebrew/opt/mysql-client/lib/pkgconfig"
+
+    # export CRYPTOGRAPHY_SUPPRESS_LINK_FLAGS="1"
+    # export MYSQLCLIENT_CFLAGS="pkg-config mysqlclient --cflags"
+    # export MYSQLCLIENT_LDFLAGS="pkg-config mysqlclient --libs"
+else
+    # ARM64
+    echo "ARM64 Terminal"
+    export BREW_PATH="/opt/homebrew"
+
+    # Homebrew - setup PATH
+    export PATH=/opt/homebrew/bin:$PATH
+    export PATH=/opt/homebrew/sbin:$PATH
+
+    # setup zsh-completion
+    if type brew &>/dev/null; then
+        FPATH=/opt/homebrew/share/zsh/site-functions:$FPATH
+    fi
+    fpath=(/opt/homebrew/share/zsh-completions $fpath)
+fi
+
+eval "$(${BREW_PATH}/bin/brew shellenv)"
 
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}
@@ -34,13 +63,6 @@ for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}
 do
   source $file
 done
-
-
-# setup zsh-completion
-if type brew &>/dev/null; then
-  FPATH=/opt/homebrew/share/zsh/site-functions:$FPATH
-fi
-fpath=(/opt/homebrew/share/zsh-completions $fpath)
 
 # initialize autocomplete here, otherwise functions won't be loaded
 autoload -U compinit

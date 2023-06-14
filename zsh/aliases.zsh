@@ -61,3 +61,5 @@ function macns() {
 
 # for x86 brew
 alias brew86='arch -x86_64 /usr/local/homebrew/bin/brew'
+
+alias cat='bat'

@@ -11,18 +11,18 @@ node_versions=(
 )
 
 for v in "${node_versions[@]}"; do
-    if [[ -z $(rtx ls -i | grep node | grep $v) ]]; then
+    if [[ -z $(mise ls -i | grep node | grep $v) ]]; then
         echo "Installing Node $v"
-        rtx install node@$v
+        mise install node@$v
     else
         echo "Node $v is already installed"
     fi
 done
 
-rtx use -g node@$global_default_version
+mise use -g node@$global_default_version
 
 # reload shell so `npm` is now available
-eval "$(rtx activate zsh)"
+eval "$(mise activate zsh)"
 
 if test $(which npm)
 then

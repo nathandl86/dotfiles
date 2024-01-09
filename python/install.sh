@@ -9,19 +9,19 @@ python_versions=(
 )
 
 for v in "${python_versions[@]}"; do
-    if [[ -z $(rtx ls -i | grep python | grep $v) ]]; then
+    if [[ -z $(mise ls -i | grep python | grep $v) ]]; then
         echo "Installing Python $v"
-        rtx install python@$v
+        mise install python@$v
     else
         echo "Python $v is already installed"
     fi
 done
 
 echo "Setting global default Python version to $global_default_version"
-rtx use -g python@$global_default_version
+mise use -g python@$global_default_version
 
 # reload shell so `pip` is now available
-eval "$(rtx activate zsh)"
+eval "$(mise activate zsh)"
 
 echo '\n>> Installing pypi packages'
 

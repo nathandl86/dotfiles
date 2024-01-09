@@ -1,2 +1,2 @@
 
-eval "$(rtx activate zsh)"
+eval "$(mise activate zsh)"

@@ -1,6 +1,6 @@
 
-completion='$(brew --prefix)/share/zsh/site-functions/_rtx'
+completion='$(brew --prefix)/share/zsh/site-functions/_mise'
 
 if test -f $completion; then
-    rtx completion zsh  > $completion
+    mise completion zsh  > $completion
 fi

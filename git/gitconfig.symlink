@@ -34,6 +34,7 @@
         #
         # Setting to git 2.0 default to suppress warning message
         default = simple
+	autoSetupRemote = true
 [github]
 	user = nathandl86
 [init]

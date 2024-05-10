@@ -126,5 +126,3 @@ alias gfhfinish='git flow hotfix finish ' # <version>
 alias gfhpush='git flow hotfix publish ' # <version>
 # Getting a published hotfix
 alias gfhpull='git flow hotfix pull origin ' # <hotfix-name>
-
-export EDITOR="/usr/local/bin/mate -w"

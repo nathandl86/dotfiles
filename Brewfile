@@ -53,6 +53,7 @@ brew 'zsh-completions'
 
 cask '1password'
 cask 'aptakube'
+cask 'boop'
 cask 'cron'
 cask 'cyberduck'
 cask 'docker'

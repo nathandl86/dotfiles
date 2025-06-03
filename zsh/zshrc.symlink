@@ -90,8 +90,8 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # include dev-scripts
 export PATH=$HOME/projects/personal/dev-scripts/bin:$PATH
-if [ -f $HOME/projects/personal/dev-scripts/bin/private-aliases ]; then
-    source $HOME/projects/personal/dev-scripts/bin/private-aliases
+if [ -f $HOME/projects/personal/dev-scripts/bin/private-zsh ]; then
+    source $HOME/projects/personal/dev-scripts/bin/private-zsh
 fi
 
 if [ -f $HOME/projects/personal/dev-scripts/bin/private-settings ]; then

@@ -66,6 +66,7 @@ cask 'google-drive'
 cask 'iterm2'
 cask 'kaleidoscope'
 cask 'lastpass'
+cask 'logi-options+' # alternatives: bettermouse or offline version of options+
 cask 'mysqlworkbench'
 cask 'notion'
 cask 'paw'

@@ -16,6 +16,7 @@ config.symlink/configstore/update-notifier-npm.json
 config.symlink/gcloud
 config.symlink/iterm2
 config.symlink/mdless
+config.symlink/glab-cli
 
 .idea/*
 

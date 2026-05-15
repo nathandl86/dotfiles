@@ -3,6 +3,8 @@
         path = ~/.gitconfig.local
 [includeIf "gitdir:~/projects/recharge/"]
 	path = ~/.gitconfig-recharge
+[includeIf "gitdir:~/.claude/"]
+    path = ~/.gitconfig-recharge
 [hub]
         protocol = https
 [alias]

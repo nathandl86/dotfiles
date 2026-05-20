@@ -17,6 +17,7 @@ config.symlink/gcloud
 config.symlink/iterm2
 config.symlink/mdless
 config.symlink/glab-cli
+config.symlink/gws
 
 .idea/*
 

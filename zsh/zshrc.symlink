@@ -102,3 +102,4 @@ fi
 export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 
 export PATH=$HOME/bin:$PATH:$M2_HOME/bin
+eval "$(mise activate zsh)"

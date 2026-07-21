@@ -2,10 +2,12 @@
 *~
 *.swp
 .vscode
+.venv
 
 # Global AI Ignores
 .claude/settings.local.json
 .plans
+.plan
 .ai-agents
 .research
 scratch

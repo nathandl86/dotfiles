@@ -18,6 +18,7 @@ config.symlink/iterm2
 config.symlink/mdless
 config.symlink/glab-cli
 config.symlink/gws
+config.symlink/1Password/
 
 .idea/*
 
